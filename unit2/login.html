@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .big-box {
+            margin: auto;
+            width: 750px;
+            height: 600px;
+            background-color: rgb(190, 45, 45);
+            border-radius: 10px;
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .form-box {
+            
+            width: 500px;
+            height: 300px;
+            padding: 20px;
+            background-color: rgb(255, 246, 246);
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);            
+        }
+
+        p , .inp {
+            display: block;
+            margin-bottom: 15px;      
+            padding:12px 20px;    
+            margin-left: 75px;     
+            width: 350px;
+            box-sizing: border-box;
+            
+        }
+
+        p {
+            text-align: center;
+        }
+
+        button {
+            display:block;
+            background-color: aqua;
+            color: white;
+            border:none;
+            padding: 10px 30px 10px 30px;
+            margin-top:30px;
+            margin-left:200px;
+            margin-bottom: 30px;       
+        }
+
+        .check {
+            margin-left: 75px;            
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <div class="big-box">
+            <div class="form-box">
+                <form>
+                    <p><strong>Have an account? Sign in</strong></p>
+                    <input class="inp" type="text" placeholder="Username" name="username">
+                    <input class="inp" type="password" placeholder="Password" name="password">                    
+                    <button>LOGIN</button>
+                    
+                    
+                        <input class="check" type="checkbox"> 
+                        <label> Remember me</label>
+                        
+                </form>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

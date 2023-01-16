@@ -1,0 +1,60 @@
+    * {
+        background-color: white;
+    }
+    
+    body {
+        max-width: 800px;
+        font-family: 'Nanum Brush Script', cursive;
+        margin:auto;
+        padding:10px;
+        border-top:none;
+        border-bottom: none;
+        border-left-style: outset;
+        border-right-style: inset;
+        border-color: #ddd;
+        border-width: 10px;       
+    }
+    
+    img {        
+        margin-left: 10 px;            
+        border-color: #ddd;
+        width: 350px;
+        height: 200px;
+        padding-bottom: 10px;
+        padding: 5px;        
+    }
+
+    #meship {
+        float: right;        
+    }
+
+    #mebooty {
+        float: left;                    
+    }
+
+    figure {
+        background-color: white;
+        text-align: center;
+        color:#333;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        box-shadow: 7px 7px 11px 4px #999;        
+    }        
+
+    .figure_meship {
+        float:right;
+        transform: rotate(4deg); 
+    }
+
+    .figure_mebooty {
+        float: left;
+        transform: rotate(-4deg);
+    }
+
+    figcaption {
+        color: #333;
+    }
+
+    header {            
+        font-family: 'Seaweed Script', cursive;
+    }        
