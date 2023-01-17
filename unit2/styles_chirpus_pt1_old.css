@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9fafc;
+    margin:0px;
+}
+
+.hdr {
+    padding-top: 15px;
+}
+
+.hdr strong{
+    margin-left: 10px;
+    
+}
+.hdr ul {
+    list-style: none;   
+    padding: 0px;
+    margin-top:8px;    
+}
+
+.hdr li {
+    margin-bottom: 8px;
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #69696a;
+}
+
+button {
+    background-color: #000;
+    color: #FFF;    
+    width: 98%;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    border-style: none;
+    margin-left: 10px;
+    margin-right:10px;
+}
+
+#container {    
+    min-height: 100vh;
+}
+
+#container p {
+    font-family: 'Open Sans', sans-serif;
+    color: #69696a;
+    border-left-width: 4px;
+    border-left-style: inset;
+    padding-left: 10px;
+    margin-left: 10px;    
+}
+
+#container h1 {
+    margin-left: 10px;
+}
+
+#footr {
+    position:fixed;
+    bottom: 0px;
+    background-color: rgba(247,193,162,0.7);
+    color: #69696a;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;    
+    align-items: center;
+    width:100%;
+    height:30px;
+    padding-left:5px; 
+}
+
+#footr ul {
+    list-style: none;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 30%;
+    padding-right: 10px;
+    font-size:0.75em;
+}
+
+.smallCircle {
+    width:90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: rgba(207, 130, 213, 0.6);
+    position: relative;
+    right:-110px;
+    top:125px;
+    visibility: hidden;
+}
+
+.mediumCircle {
+    width:110px;
+    height:110px;
+    border-radius: 50%;
+    background-color: rgba(247, 193, 162, 0.7);
+    position:relative;
+    left:80px;
+    top:100px;
+    visibility: hidden;    
+}
+
+.bigCircle {
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgba(247, 136, 167, 0.6);
+    position:relative;
+    visibility: hidden;
+}
+
+@media screen and (min-width: 768px) {
+ 
+    .menubutton {
+        width: auto ;
+    }
+
+    .hdr {
+        display:flex;
+        background-color: #F2F2F2;
+    }
+
+    .hdr li {
+        display:inline;
+    }
+
+    .container {
+        display:flex;
+        flex-direction: row;
+                
+    }
+
+    .smallCircle {
+        visibility: visible;
+    }
+
+    .mediumCircle {
+        visibility: visible;
+    }
+
+    .bigCircle {
+        visibility: visible;
+    }
+}
