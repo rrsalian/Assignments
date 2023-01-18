@@ -12,10 +12,10 @@ body {
 
 .hdr strong{
     margin-left: 10px;
-    
 }
+
 .hdr ul {
-    list-style: none;   
+    list-style: none;
     padding: 0px;
     margin-top:8px;    
 }
@@ -122,17 +122,23 @@ button {
 
     .hdr {
         display:flex;
-        background-color: #F2F2F2;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px;
     }
 
-    .hdr li {
-        display:inline;
+    .hdr ul {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom:8px;    
     }
-
+  
     .container {
         display:flex;
         flex-direction: row;
-                
+                  
     }
 
     .smallCircle {
