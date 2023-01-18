@@ -144,7 +144,7 @@ button {
         border-radius: 50%;
         background-color: rgba(247, 193, 162, 0.7);
         position:fixed;
-        left:15px;
+        right:15px;
         top: 250px;
         visibility: visible;   
     } 
