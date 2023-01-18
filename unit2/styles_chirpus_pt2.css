@@ -143,9 +143,9 @@ button {
         height:110px;
         border-radius: 50%;
         background-color: rgba(247, 193, 162, 0.7);
-        position:relative;
-        left:90px;
-        top: 70px;
+        position:fixed;
+        left:15px;
+        top: 250px;
         visibility: visible;   
     } 
 }
