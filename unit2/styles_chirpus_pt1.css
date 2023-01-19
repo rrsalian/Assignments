@@ -12,10 +12,10 @@ body {
 
 .hdr strong{
     margin-left: 10px;
+    
 }
-
 .hdr ul {
-    list-style: none;
+    list-style: none;   
     padding: 0px;
     margin-top:8px;    
 }
@@ -52,8 +52,7 @@ button {
     border-left-width: 4px;
     border-left-style: inset;
     padding-left: 10px;
-    margin-left: 10px;
-    padding-right: 10px;
+    margin-left: 10px;    
 }
 
 #container h1 {
@@ -84,68 +83,6 @@ button {
     font-size:0.75em;
 }
 
-
-
-@media screen and (min-width: 768px) {
- 
-    .menubutton {
-        width: auto ;
-    }
-
-    .hdr {
-        display:flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0px;
-    }
-
-    .hdr ul {
-        display:flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom:8px;    
-    }
-    
-    #container {
-        display: flex;        
-        
-    }
-
-    .main_content {
-        max-width: 60%;
-    }
-
-    .smallCircle {
-        width:90px;
-        height: 90px;
-        border-radius: 50%;
-        background-color: rgba(207, 130, 213, 0.6);
-        position: fixed;
-        right: 15px;
-        top:180px;
-        visibility: visible;
-    }
-
-    .bigCircle {
-        width:150px;
-        height: 150px;
-        border-radius: 50%;
-        background-color: rgba(247, 136, 167, 0.6);
-        position:fixed;
-        right: 60px;
-        top: 170px;
-        visibility: visible;
-    }
-
-    .mediumCircle {
-        width:110px;
-        height:110px;
-        border-radius: 50%;
-        background-color: rgba(247, 193, 162, 0.7);
-        position:fixed;
-        right:15px;
-        top: 250px;
-        visibility: visible;   
-    } 
+img {
+    display: none;
 }
