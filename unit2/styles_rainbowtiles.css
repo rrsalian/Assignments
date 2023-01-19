@@ -1,0 +1,55 @@
+
+body {    
+    height: 100vh;
+    margin:0;
+}
+
+.container {
+    display:flex;
+    flex-wrap: wrap;
+    border:8px solid black;
+    height: 100%;
+}
+
+.rect {
+    display: flex;
+    width: 50%;
+    height: 33.33%;
+    justify-content: center;
+    align-items:center;
+    margin:0;
+}
+
+
+.color-red {        
+    background-color: red;    
+}
+
+.color-orange {
+    background-color: orange;    
+}
+
+.color-yellow {
+    background-color: yellow;    
+}
+
+.color-green {
+    background-color: green;
+}
+
+.color-blue {
+    background-color: blue;
+}
+
+.color-purple {
+    background-color: purple;    
+}
+
+
+
+@media screen and (min-width: 600px) {
+    .rect {        
+        width: 33%;
+        height: 50%;
+    } 
+}
