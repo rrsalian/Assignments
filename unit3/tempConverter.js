@@ -5,6 +5,7 @@ const temperature = prompt("What is the Temperature?");
 let tempArray = temperature.split("");
 let unit = tempArray[tempArray.length - 1];
 tempArray = temperature.split(unit);
+
 console.log(tempArray);
 if (isNaN(tempArray[0])) {
     console.log("Not a anumber");
