@@ -1,7 +1,7 @@
 let firstName = "Rajesh";
 let lastName = "Salian"
 let fullName = "";
-fullName = [firstName,' ',lastName].join('');
+fullName = [firstName,lastName].join(' ');
 console.log(firstName);
 console.log(lastName);
 console.log(fullName);
