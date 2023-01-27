@@ -11,7 +11,7 @@ if (isNaN(temp)) {
     return;
 }
 else {
-    tempConvert = Number(temp);
+    tempConvert = +temp;
 }
 
 if ((unit === "F") || (unit === "f")) {
