@@ -68,8 +68,9 @@ function filterPassing(array) {
 
 function filter90AndAbove(array) {
     let submissions90AndAbove = array.filter( function (element) {
-        return element.passed >= 90;
+        return element.score >= 90;
     });
+    return submissions90AndAbove;
 }
 
 function createRange(start, end) {
