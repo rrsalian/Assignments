@@ -111,16 +111,20 @@ let submissions = [ { name:'Jane', score:95, date:new Date("2021-01-24 EST") , p
 addSubmission(submissions, "John", 55, new Date("2021-01-23 EST"));  /* call to addSubmission function */
 addSubmission(submissions, "Jim", 97, new Date("2022-05-16 EST"));
 /* print all names of the subissions after addSubmission */
-console.log("Printing all the submissions using function addSubmissions");
+console.log("Printing all the submissions after function addSubmissions");
+console.log(submissions);
 
 deleteSubmissionByIndex(submissions, 0);
-console.log("Printing all the submissions using function delteSubmissionsByIndex 0");
+console.log("Printing all the submissions after function call deleteSubmissionsByIndex 0");
+console.log(submissions);
 
 deleteSubmissionByName(submissions,"Jill");
-console.log("Printing all the submissions using function delteSubmissionsByName Jill");
+console.log("Printing all the submissions after function call deleteSubmissionsByName Jill");
+console.log(submissions);
 
-editSubmissions(submissions,2,65);
+editSubmissions(submissions,2,65); /* Updating score of submissions for index = 2 */
 console.log("Printing all submissions using function editSubmissions");
+console.log(submissions);
 
 let sObjByName = findSubmissionByName(submissions,"jack");
 console.log("Printing the submission found by name using function findSubmissionByName");
