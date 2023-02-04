@@ -4,10 +4,9 @@ const pizzaSizes = ['S','s','M','m','L','l'];
 const saladSizes = ['S','s','L','l'];
 const deliveries = ['yes','y','no','n'];
 
-const priceChart = [ { item: 0 , pizza: [ { size:'S' , price:5 }, { size:'M' , price:6 }, { size:'L' , price:7 } ] }, 
-                     { item: 1 , salad: [ { size:'S' , price:2 }, { size:'L' , price:4 } ] } 
-                   ];
-let pizza = {};
+//const priceChart = [ { item: 0 , pizza: [ { size:'S' , price:5 }, { size:'M' , price:6 }, { size:'L' , price:7 } ] }, 
+//                     { item: 1 , salad: [ { size:'S' , price:2 }, { size:'L' , price:4 } ] } 
+//                     ];
 
 function ask(itemName) {
     const order = prompt(`What size ${itemName} would you like? `);
@@ -76,8 +75,7 @@ function askAboutSalad() {
 }
 
 function askAboutDelivery() {
-    let delivery = prompt("Would you like delivery?");
-    
+    let delivery = prompt("Would you like delivery?");   
     delivery = delivery.toLowerCase();
 
     if (!deliveries.includes(delivery)) {
@@ -85,8 +83,8 @@ function askAboutDelivery() {
         return null;
     }
 
-    const address = prompt("Please provide your address information");
-    if (address === "") {
+    const address = prompt("Please provide your address information: ");
+    if (address === '') {
         console.log(`Not a valid address. Redo.`);
         return null;
     }
@@ -104,20 +102,38 @@ function askAboutDelivery() {
     }
 }
 
+let order = prompt('Would you like order pizza, salad, and delivery? ');
+order = order.toLowerCase();
+if (order === 'yes' || order === 'y') {
+    let finalBull = 0;
 
-let pizzaObj = askAboutPizza();
-while (pizzaObj == null) {
-    pizzaObj = askAboutPizza();
-}
-console.log(pizzaObj);
+    let pizzaObj = askAboutPizza();
+    while (pizzaObj == null) {
+        pizzaObj = askAboutPizza();
+    }
+    console.log(pizzaObj);
 
-let saladObj = askAboutSalad();
-while (saladObj == null) {
-    saladObj = askAboutSalad();
+    let saladObj = askAboutSalad();
+    while (saladObj == null) {
+        saladObj = askAboutSalad();
+    }
+    console.log(saladObj);
+
+    let deliveryObj = askAboutDelivery();
+    while (deliveryObj == null) {
+        deliveryObj = askAboutDelivery();
+    }
+    console.log(deliveryObj);
+    
+    finalBill = pizzaObj.price + saladObj.price + deliveryObj.price;
+    console.log(finalBill);
 }
-console.log(saladObj);
- 
+else {
+    console.log("Customer is not ineterested in the Order");
+}
+
 //pizza = ask('pizza');
 //console.log(pizza);
 //salad = ask('salad');
 //console.log(salad);
+
