@@ -6,7 +6,7 @@ function addSubmission(array, newName, newScore, newDate) {
     addObject.score = newScore;
     addObject.newDate = newDate;
     addObject.passed = (newScore >= 60) ? true : false;
-    array.push(addObject);      /* Pushing new submission to the existing submissions */
+    array.push(addObject);      /* Pushing new submission object to the existing submissions array */
 }
 
 function deleteSubmissionByIndex (array, index) {
