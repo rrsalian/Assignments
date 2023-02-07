@@ -64,6 +64,7 @@ function filterPassing(array) {
     return submissionsPassed;
 }
 
+/* Another way to do filter */
 /*
 function filterPassing(array) {
     let submissionsPassed = array.filter( function(element) {
