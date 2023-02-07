@@ -60,18 +60,33 @@ function findAverageScore (array) {
 }
 
 function filterPassing(array) {
+    let submissionsPassed = array.filter( element => element.passed);
+    return submissionsPassed;
+}
+
+/*
+function filterPassing(array) {
     let submissionsPassed = array.filter( function(element) {
        return element.passed == true;
     });
     return submissionsPassed;
 }
+*/
 
+function filter90andAbove(array) {
+    let submissions90AndAbove = array.filter(element => element.score >= 90);
+    return submissions90AndAbove;
+}
+
+/* Another way to do filter */
+/*   
 function filter90AndAbove(array) {
     let submissions90AndAbove = array.filter( function (element) {
         return element.score >= 90;
     });
     return submissions90AndAbove;
 }
+*/
 
 function createRange(start, end) {
     let array = [];
@@ -143,7 +158,7 @@ let sObjPassed = filterPassing(submissions);
 console.log("Printing all the Student Submissions passed using function filterPassing");
 console.log(sObjPassed);
 
-let sObj90AndAbove = filter90AndAbove(submissions);
+let sObj90AndAbove = filter90andAbove(submissions);
 console.log("Printing all the Student Submissions with scores 90 and above using function filter90AndAbove");
 console.log(sObj90AndAbove);
 
