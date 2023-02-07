@@ -104,7 +104,7 @@ function askAboutDelivery() {
 
 let order = prompt('Would you like order pizza, salad, and delivery? ');
 order = order.toLowerCase();
-if (order === 'yes' || order === 'y') {
+if (order === 'yes' || order === 'y') {         
     let finalBull = 0;
 
     let pizzaObj = askAboutPizza();
