@@ -20,43 +20,36 @@ function deleteSubmissionByName (array,removeName) {
 }
 
 function editSubmissions (array, index, score) {
-    array[index].passed = true;
+    
     array[index].score  = score;
-
-    if (array[index].score < 60) {
-        array[index].passed = false;
-    }
+    array[index].passed = score >= 60;
 }
 
 function findSubmissionByName (array, name) {
-    let submissionsObject = array.find( element => element.name === name);
-    return submissionsObject;
+    let submission = array.find( element => element.name === name);
+    return submission;
 }
 
 function findLowestScore (array) {
-    let lowestScore = array[0].score;
-    let submissionObject = array[0];
+    let lowestScore = array[0];
 
     array.forEach(element => {      /* Use forEach if you're only dealing with synchronous code (or you don't need to wait for an asynchronous process to finish during the loop) */
         
-        if (lowestScore > element.score) {
-            lowestScore = element.score;
-            submissionObject = element;      
+        if (lowestScore.score > element.score) {
+            lowestScore = element;
         }
     });
 
-    return submissionObject;
+    return lowestScore;
 }
 
 function findAverageScore (array) {    
     let totalScore = 0;
-    let totalStudents = 0;
-    for (const iterator of array) {
+    
+    for (const iterator of array)
         totalScore = totalScore + iterator.score;
-        totalStudents = totalStudents + 1;
-    }
 
-    return (totalScore / totalStudents);
+    return (totalScore / array.length);
 }
 
 function filterPassing(array) {
