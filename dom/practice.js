@@ -79,4 +79,29 @@
     addCalcButton.addEventListener('click', () => {
         document.getElementById('question-15-answer').textContent = +document.getElementById('question-15-x').value + +document.getElementById('question-15-y').value;        
     })
+
+    
+
+    const equalsbtn = document.getElementById('calc-button');
+    equalsbtn.addEventListener('click', () => {
+        const x = document.getElementById('question-16-x');
+        const y = document.getElementById('question-16-y');
+        const op = document.getElementById('operator');
+        let answer = 0;
+
+        switch (op.value) {
+            case '+':
+                answer = +x.value + +y.value;                
+                break;
+            case '-':
+                answer = +x.value - +y.value;
+                break;
+            case '*':
+                answer = +x.value * +y.value;
+            default:
+                answer = +x.value / +y.value;
+        }
+        
+        document.getElementById('question-16-answer').textContent = answer;
+    })
 }())
