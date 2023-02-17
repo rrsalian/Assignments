@@ -58,7 +58,7 @@
     
     const question12Button = document.getElementById('say-hello');
     question12Button.addEventListener( 'click', () => document.getElementById('message').textContent = 
-                                                       'Hello ' + document.getElementById('question-12-name').value);
+                                                       `Hello ${document.getElementById('question-12-name').value}`);
 
     const question13 = document.getElementById('add-user');
     question13.addEventListener('click', () => {
