@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #container {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        .myForm {
+            width: 100%;
+            height: 100%;
+            border: 1px solid green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+        }
+    </style>
+</head>
+
+<body>
+    <main id="container">        
+        <section class="myForm">            
+            <form class="formItems">                
+                <div>
+                    <span>How Many?<input id='how-many' type="number" value=0></span>
+                    <span>Which Coin?
+                        <select id="which-coin">
+                            <option>Penny</option>
+                            <option>Nickel</option>
+                            <option selected>Dime</option>
+                            <option>Quarter</option>
+                        </select>
+                    </span>
+                    <button id="make-money">Make Money</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+    <script src="makeMoney.js"></script>
+</body>
+
+</html>
