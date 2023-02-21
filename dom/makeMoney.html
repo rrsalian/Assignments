@@ -20,11 +20,10 @@
         .myForm {
             display: flex;
             flex-direction:column;            
-            width: 75%;
-            height: 75%;           
-            text-align: center;
+            width: 50%;
+            height: 50%;
             justify-content: center;
-            align-items: center;            
+            align-items: center;
             padding: 0px;
             margin: 0px;
             transform: translate(50%,50%);
@@ -58,6 +57,10 @@
             background-color: aqua;
         }
 
+        #total {
+            padding: 10px;
+        }
+        
         #coinContainer {
             display:flex;
             flex-wrap:wrap;
@@ -65,14 +68,33 @@
             align-content: center;                       
         }
 
-        .showCoin {
-            width:40px;
-            height:40px;
+        .showCoin {            
             border-radius:100%;
             background-color:grey;            
             font: bold 14px/13px Helvetica, Verdana, Tahoma;
             padding:15px;
         }
+
+        .dime {
+            width:40px;
+            height:40px;                     
+        }
+
+        .penny {
+            width:35px;
+            height:35px;
+        }
+
+        .nickel {
+            width:45px;
+            height:45px;
+        }
+
+        .quarter {
+            width:50px;
+            height:50px;
+        }
+        
     </style>
 </head>
 
@@ -93,6 +115,10 @@
         </div>
             <button id="make-money" type="button">Make Money</button>
 
+        <div id="total">
+            Total Amount
+            <input id='total-amount' type="number" value=0 readonly>
+        </div>    
         <div id="coinContainer">
 
         </div>
