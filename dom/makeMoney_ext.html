@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;            
+        }
+
+        .myForm {
+            display: flex;
+            flex-direction:column;            
+            width: 50%;
+            height: 50%;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            margin: 0px;
+            transform: translate(50%,50%);
+        }
+
+        .coins {
+            display: flex;            
+            flex-direction: row;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+
+        #how-many {
+            text-align: right;
+            border: 1px solid grey;
+            margin-left: 5px;
+        }
+
+        #which-coin {
+            text-align: right;
+            width:162px;
+            margin-left: 2px;
+            border: 1px groove grey;            
+        }
+
+        #make-money {
+            border: 1px solid black;
+            width: 100px;
+            border-radius: 6px;
+            padding: 2px;
+            background-color: aqua;
+        }
+
+        #total {
+            padding: 10px;
+        }
+        
+        #coinContainer {
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: space-between;
+            align-content: center;                       
+        }
+
+        .showCoin {            
+            border-radius:100%;
+            background-color:grey;            
+            font: bold 14px/13px Helvetica, Verdana, Tahoma;
+            padding:15px;
+        }
+
+        .dime {
+            width:40px;
+            height:40px;                     
+        }
+
+        .penny {
+            width:35px;
+            height:35px;
+        }
+
+        .nickel {
+            width:45px;
+            height:45px;
+        }
+
+        .quarter {
+            width:50px;
+            height:50px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <form class="myForm">
+        <div class='coins' id="divCoins">            
+                How Many?
+                <input id='how-many' type="number" value=0>            
+        </div>
+        <div class='coins' id="divCoinType">
+            Which Coin?
+            <input type="radio" id="penny" name="which-coin" value="Penny">
+            <label for="Penny">Penny</label>
+            <input type="radio" id="dime" name="which-coin" value="Dime" checked>
+            <label for="Dime">Dime</label>
+            <input type="radio" id="nickel" name="which-coin" value="Nickel">
+            <label for="Nickel">Nickel</label>
+            <input type="radio" id="quarter" name="which-coin" value="Quarter">
+            <label for="Quarter">Quarter</label>
+        </div>
+            <button id="make-money" type="button">Make Money</button>
+
+        <div id="total">
+            Total Amount
+            <input id='total-amount' type="number" value=0 readonly>
+        </div>    
+        <div id="coinContainer">
+
+        </div>
+    </form>
+    <script src="makeMoney_ext.js"></script>
+</body>
+
+</html>
