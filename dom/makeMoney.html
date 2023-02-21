@@ -14,52 +14,82 @@
 
         body {
             width: 100vw;
-            height: 100vh;
-        }
-
-        #container {
-            display: flex;
-            height: 100%;
-            width: 100%;
+            height: 100vh;            
         }
 
         .myForm {
-            width: 100%;
-            height: 100%;
-            border: 1px solid green;
             display: flex;
+            flex-direction:column;            
+            width: 45%;
+            height: 45%;           
+            text-align: center;
             justify-content: center;
-            align-items: center;
+            align-items: center;            
+            padding: 0px;
+            margin: 0px;
+            transform: translate(50%,50%);
         }
 
-        div {
-            display: flex;
-            flex-direction: column;
+        .coins {
+            display: flex;            
+            flex-direction: row;
+            width: 300px;
+            margin-bottom: 10px;
+        }
 
+        #how-many {
+            text-align: right;
+            border: 1px solid grey;
+            margin-left: 5px;
+        }
+
+        #which-coin {
+            text-align: right;
+            width:162px;
+            margin-left: 2px;
+            border: 1px groove grey;            
+        }
+
+        #make-money {
+            border: 1px solid black;
+            width: 100px;
+            border-radius: 6px;
+            padding: 2px;
+            background-color: aqua;
+        }
+
+        .showCoin {
+            width:40px;
+            height:40px;
+            border-radius:100%;
+            background-color:grey;            
+            font: bold 14px/13px Helvetica, Verdana, Tahoma;
+            padding:10px;
         }
     </style>
 </head>
 
 <body>
-    <main id="container">        
-        <section class="myForm">            
-            <form class="formItems">                
-                <div>
-                    <span>How Many?<input id='how-many' type="number" value=0></span>
-                    <span>Which Coin?
-                        <select id="which-coin">
-                            <option>Penny</option>
-                            <option>Nickel</option>
-                            <option selected>Dime</option>
-                            <option>Quarter</option>
-                        </select>
-                    </span>
-                    <button id="make-money">Make Money</button>
-                </div>
-            </form>
-        </section>
+    <form class="myForm">
+        <div class='coins' id="divCoins">            
+                How Many?
+                <input id='how-many' type="number" value=0>            
+        </div>
+        <div class='coins' id="divCoinType">
+            Which Coin?
+            <select id="which-coin">
+                <option>Penny</option>
+                <option>Nickel</option>
+                <option selected>Dime</option>
+                <option>Quarter</option>
+            </select>
+        </div>
+            <button id="make-money" type="button">Make Money</button>
 
-    </main>
+        <div id="coinContainer">
+
+        </div>
+    </form>
     <script src="makeMoney.js"></script>
 </body>
 
