@@ -7,10 +7,12 @@
   const total = document.getElementById('total-amount');
   let totalAmount = 0;
   
-  total.contenteditable="true";
+  total.contenteditable="true";  
 
   makeMoney.addEventListener('click', (event) => {    
-    event.preventDefault();
+    //event.preventDefault();  // we can also use button type="button" to avoid form submit to backend else use preventDefault
+                              
+    console.log ( event.target);
     for (let i = 0; i < howMany.value; i++) {
       const newCoinP = document.createElement("p");
       newCoinP.classList.add("showCoin");
@@ -23,7 +25,7 @@
         total.value = totalAmount;
       })
     }
-    totalAmount = totalAmount + getTotal("+", howMany.value,whichCoin.value);
+    totalAmount = totalAmount + getTotal("+", +howMany.value, whichCoin.value);
     total.value = totalAmount;
   });
 }())
@@ -32,7 +34,7 @@ function getTotal (operator, numCoins, coinType) {
   let amount = 0;
   switch (coinType) {
     case "Penny":
-      amount = numCoins * 1;
+      amount = numCoins;
       break;
     case "Nickel":
       amount = numCoins * 5;
