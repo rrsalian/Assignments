@@ -1,9 +1,6 @@
 * {
     margin:0;
-<<<<<<< HEAD
     border: 0;
-=======
->>>>>>> d0ae866fdf665330b07b2637e64f747816d0d95f
     padding:0;
 }
 
@@ -14,12 +11,8 @@ body {
 
 .container {
     display:flex;
-<<<<<<< HEAD
     flex-wrap: wrap;
 /*    border:8px solid black; */
-=======
-    flex-wrap: wrap;    
->>>>>>> d0ae866fdf665330b07b2637e64f747816d0d95f
     height: 100%;
 }
 
@@ -30,13 +23,7 @@ body {
     justify-content: center;
     align-items:center;
     margin:0;
-<<<<<<< HEAD
     border:1px solid black;    
-=======
-    color:white;
-    border: 1PX solid black;
-    box-sizing: border-box;
->>>>>>> d0ae866fdf665330b07b2637e64f747816d0d95f
 }
 
 
