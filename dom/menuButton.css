@@ -23,8 +23,7 @@ li {
     justify-content: flex-end;
     align-items: center;
     height: 40px;
-    padding: 0 24px;
-    position:fixed;
+    padding: 0 24px;    
     border: 1px solid grey;
 }
 
@@ -58,16 +57,6 @@ li {
     cursor: pointer;
 }
 
-.bar {
-    display:block;                      
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background-color: black;
-}
-
 .hamburger.active .bar:nth-child(1) {
     opacity: 0;
 }
@@ -78,4 +67,23 @@ li {
 
 .hamburger.active .bar:nth-child(3) {
     transform: translateY(-4px) rotate(-45deg);
+}
+
+.bar {
+    display:block;                      
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;    
 }
