@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width:100vw;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            position: relative;
+            margin:0;
+            padding:0;
+        }
+
+        .circle {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg,rgb(138, 25, 190),rgb(152, 13, 78));
+            position: absolute;
+            z-index:10;
+            top:0;
+            left:0;
+            transition: 0.4s ease-in-out;
+            animation: animate 0.4s ease-in-out infinite;
+            box-shadow: 0px 0px 50px 10px pink;
+        }
+
+        @keyframes animate {
+            100%{
+                filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <script src="./circleAndMouse.js"></script>
+</body>
+</html>
