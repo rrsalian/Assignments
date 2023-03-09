@@ -3,3 +3,69 @@
     margin: 0;
 }
 
+body {
+    margin:0;
+    padding:0;
+    height: 100vh;
+    display:block;
+    width:100vw;
+    height: 100vh;
+    justify-content: center;    
+}
+
+header {
+    display:flex;
+    justify-content: center;;
+}
+
+main {
+    width:50%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;    
+    transform: translate(50%,50%);
+}
+
+.buttons {
+    display:flex;    
+    justify-content: left;
+    align-items: left;
+    background-color: black;
+    width:430px;    
+    box-sizing:border-box;
+    padding-top:5px;
+    padding-left:6px;    
+}
+
+.button {
+    border-radius: 5px;
+    padding:2px;
+}
+
+.section {
+    display:flex;
+    flex-direction: row;
+    width:430px;    
+    background-color: black; 
+    justify-content: center;
+}
+
+
+sqr {
+    background-color: black;
+}
+
+.red {
+    background-color: red;
+    color:white;
+}
+
+.green {
+    background-color: green;
+    color:white;
+}
+
+.blue {
+    background-color:blue;
+    color:white;
+}
