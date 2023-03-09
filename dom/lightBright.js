@@ -9,7 +9,7 @@
         section = document.createElement("section");        
         section.classList.add("section");
         for (let j = 0; j < 10; j++) {
-            count++;
+            ++count;
             square = document.createElement("div");
             square.style.width = '40px';
             square.style.height = '40px';
@@ -31,8 +31,25 @@
     })
     
     main.addEventListener('click', (e) => {
-        if (e.target.className.startsWith('sqr')) {
-            e.target.classList.add(color);
+        if (e.target.className.startsWith('sqr')) {            
+            e.target.style.backgroundColor = color;
         }
     })
+
+    main.addEventListener('contextmenu', (e) => {                
+        if (e.target.className.startsWith('sqr')) {
+            e.target.style.backgroundColor = 'black';
+        }
+    })
+
+    const allsqrs = document.querySelectorAll('.sqr');
+    const clear = document.getElementById('clear');
+    
+    clear.addEventListener('click', (e) => {
+        
+        for (let sqr of allsqrs) {
+            sqr.style.backgroundColor = 'black';
+        }    
+    })
+
 }())

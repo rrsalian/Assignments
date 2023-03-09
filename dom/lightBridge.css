@@ -53,19 +53,9 @@ main {
 
 sqr {
     background-color: black;
-}
-
-.red {
-    background-color: red;
     color:white;
 }
 
-.green {
-    background-color: green;
-    color:white;
-}
-
-.blue {
-    background-color:blue;
-    color:white;
+.black {
+    background-color: black;
 }
