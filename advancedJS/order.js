@@ -16,8 +16,8 @@
             //     main.append(div);
             // }
 
-            for(let author of data.authors) {
-                const ul = document.createElement('ul');
+            const ul = document.createElement('ul');
+            for(let author of data.authors) {                
                 const li = document.createElement('li');                
                 const a = document.createElement('a');             
                 a.innerText = author;                
@@ -25,6 +25,26 @@
                 li.append(a);
                 ul.append(li);                
                 document.body.append(ul);
+
+                li.addEventListener('click', (e) => {
+                    liText = e.target.innerText;
+                    
+                    fetch(`https://poetrydb.org/author/${liText}/title`)
+                        .then(response1 => response1.json())
+                        .then(data1 => {
+                            const titleEl = document.createElement('div');                      
+                            
+                            for (let each of data1) {
+                                const titleP = document.createElement('p');
+                                //console.log(each.title);
+                                titleP.innerText = each.title;
+                                titleP.textDecoration = "none";
+                                titleEl.append(titleP);
+                            }
+
+                            e.target.append(titleEl);
+                        })
+                })
             }            
         });
 }())
