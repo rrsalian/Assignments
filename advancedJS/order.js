@@ -24,7 +24,6 @@
                 a.href = "#";
                 div.append(a);
                 document.body.append(div);
-            }
-
+            }            
         });
 }())
