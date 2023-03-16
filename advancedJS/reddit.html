@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding:0;
+            border:0;
+        }
+
+        body {
+            width:100vw;
+            height:100vh;
+            padding:0;
+            border:0;
+        }
+
+        #main {
+            display:flex;
+            flex-direction: column;
+            background-color: bisque;            
+            align-items: center;
+        }
+
+        .title {
+            color:blue;
+            font-family: Arial, Helvetica, sans-serif;            
+            font-weight: 500;
+            padding:5px;
+        }
+
+        .image {            
+            padding-bottom: 20px;            
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <main id="main">
+        <scan>
+        <input id= "subreddit" type="text" name="subreddit"/>
+        <button id="srchBtn" type="button" name="search">Search</button>
+        </scan>
+    </main>
+
+    <script>
+        //getData('aww');        
+// reusable api call to the reddit subreditt api
+// create the data
+// clear the previous
+
+        const main = document.getElementById('main');        
+        const subreddit = document.getElementById('subreddit');
+        const srchBtn = document.getElementById('srchBtn');       
+
+        srchBtn.addEventListener('click',(e) => {
+            e.defaultPrevented;
+            window.location.reload();
+            console.log(subreddit.value); 
+            //getData(subreddit.value);
+            
+        })
+
+        function getData(subReddit = 'aww') {
+            const url = `https://www.reddit.com/r/${subReddit}/.json`;
+            console.log(url);
+            const domain = (new URL(url));
+            const urlHost = "https://" + domain.hostname;
+            console.log(urlHost);
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {                    
+                    
+                    for (let title of data.data.children) {
+                        const getTitle = document.createElement('a');
+                        const getImage = document.createElement('img');
+                        getTitle.classList.add('title');
+                        getTitle.innerText = title.data.title;
+                        const getUrl = urlHost + title.data.permalink;
+                        getTitle.setAttribute("href", getUrl);                        
+                        getImage.classList.add('image');
+
+                        if (title.data.thumbnail === "self")
+                            getImage.src = "https://emoji.redditmedia.com/l73ksapw1guz_t5_3nqvj/pupper";
+                        else
+                            getImage.src = title.data.thumbnail;
+                                                
+                        main.append(getTitle);
+                        main.append(getImage);
+                    }                    
+                });
+        }
+
+    </script>
+</body>
+
+</html>
