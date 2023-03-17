@@ -1,0 +1,19 @@
+{
+  "name": "firstproject",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --verbose"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "luxon": "^3.3.0" 
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
