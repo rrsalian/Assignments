@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,41 +18,35 @@
             margin-left: 10px;
             margin-right: 10px;
         }
-        
-
     </style>
 </head>
+
 <body>
 
-    
 
-    <script>        
-        const array = [];
-        let count = 0;
-        let catFact = document.createElement('div');
-        
-        catFact.classList.add('catFact');
+
+    <script>
+
         const button = document.createElement('button');
-        button.innerText = "Next Fact"
-        button.onclick = "Refresh()"
-        button.classList.add('button');
+        button.innerText = "Next Fact";
+        const catFact = document.createElement('div');
+        //button.setAttribute("id", "refreshBtn");
+        catFact.classList.add('catFact');
 
-        fetch('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data.text);
-                catFact.innerText = data.text;                   
-            })
-
+        function refresh() {
+            fetch('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1')
+                .then(response => response.json())
+                .then(data => {
+                    //console.log(data.text);
+                    catFact.innerText = data.text;
+                })                        
+        }
         document.body.append(catFact);
         document.body.append(button);
+        button.addEventListener('click', refresh);
+        refresh();
 
-        function Refresh() {
-            window.parent.location = window.parent.location.href;
-        }
-        //button.addEventListener('click', refresh);
-        //refresh();
-        
     </script>
 </body>
+
 </html>
