@@ -30,8 +30,7 @@ function isVowel(letter) {
     return vowel.includes(letter);
 }
 
-//module.exports {
-//    translate
-//}
+module.exports = {
+   translate
+}
 
-console.log(translate('Happy go lucky'));
