@@ -9,95 +9,99 @@
 
     <style>
         * {
-            padding:0;
-            border:0;
+            padding: 0;
+            border: 0;
         }
 
         body {
-            width:100vw;
-            height:100vh;
-            padding:0;
-            border:0;
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            border: 0;
         }
 
         #main {
-            display:flex;
+            display: flex;
             flex-direction: column;
-            background-color: bisque;            
+            background-color: bisque;
             align-items: center;
         }
 
         .title {
-            color:blue;
-            font-family: Arial, Helvetica, sans-serif;            
+            color: blue;
+            font-family: Arial, Helvetica, sans-serif;
             font-weight: 500;
-            padding:5px;
+            padding: 5px;
         }
 
-        .image {            
-            padding-bottom: 20px;            
+        .image {
+            padding-bottom: 20px;
         }
-        
     </style>
 </head>
 
 <body>
 
     <main id="main">
-        <scan>
-        <input id= "subreddit" type="text" name="subreddit"/>
-        <button id="srchBtn" type="button" name="search">Search</button>
-        </scan>
+        <section id="srcSection">
+            <scan>
+                <input id="subreddit" type="text" name="subreddit" />
+                <button id="srchBtn" type="button" name="search">Search</button>
+            </scan>
+        </section>
+        <section id="dataSection">
+
+        </section>
     </main>
 
     <script>
         //getData('aww');        
-// reusable api call to the reddit subreditt api
-// create the data
-// clear the previous
+        // reusable api call to the reddit subreditt api
+        // create the data
+        // clear the previous
 
-        const main = document.getElementById('main');        
+        const dataSection = document.getElementById('dataSection');
         const subreddit = document.getElementById('subreddit');
-        const srchBtn = document.getElementById('srchBtn');       
 
-        srchBtn.addEventListener('click',(e) => {
-            e.defaultPrevented;
-            window.location.reload();
-            console.log(subreddit.value); 
-            //getData(subreddit.value);
-            
-        })
 
         function getData(subReddit = 'aww') {
             const url = `https://www.reddit.com/r/${subReddit}/.json`;
             console.log(url);
             const domain = (new URL(url));
             const urlHost = "https://" + domain.hostname;
-            console.log(urlHost);
+            //console.log(urlHost);
 
             fetch(url)
                 .then(response => response.json())
-                .then(data => {                    
-                    
+                .then(data => {
                     for (let title of data.data.children) {
                         const getTitle = document.createElement('a');
                         const getImage = document.createElement('img');
                         getTitle.classList.add('title');
                         getTitle.innerText = title.data.title;
                         const getUrl = urlHost + title.data.permalink;
-                        getTitle.setAttribute("href", getUrl);                        
+                        getTitle.setAttribute("href", getUrl);
                         getImage.classList.add('image');
 
                         if (title.data.thumbnail === "self")
                             getImage.src = "https://emoji.redditmedia.com/l73ksapw1guz_t5_3nqvj/pupper";
                         else
                             getImage.src = title.data.thumbnail;
-                                                
-                        main.append(getTitle);
-                        main.append(getImage);
-                    }                    
+
+                        dataSection.append(getTitle);
+                        dataSection.append(getImage);
+                    }
                 });
         }
+
+        const srchBtn = document.getElementById('srchBtn');
+
+        srchBtn.addEventListener('click', getData(subreddit.value));
+
+        if (subreddit.value === "")
+            getData("aww");
+        else
+            getData(subreddit.value);
 
     </script>
 </body>
