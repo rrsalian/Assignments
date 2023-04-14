@@ -22,6 +22,7 @@
                 const a = document.createElement('a');             
                 a.innerText = author;                
                 a.href = "#";
+                a.style.textDecoration = "none";
                 li.append(a);
                 ul.append(li);                
                 document.body.append(ul);
@@ -32,13 +33,14 @@
                     fetch(`https://poetrydb.org/author/${liText}/title`)
                         .then(response1 => response1.json())
                         .then(data1 => {
-                            const titleEl = document.createElement('div');                      
+                            const titleEl = document.createElement('div');                    
                             
                             for (let each of data1) {
+                                console.log(data1);
                                 const titleP = document.createElement('p');
-                                //console.log(each.title);
+                                
                                 titleP.innerText = each.title;
-                                titleP.textDecoration = "none";
+                                
                                 titleEl.append(titleP);
                             }
 
