@@ -2,13 +2,14 @@ import express from "express";
 import Movie from "../models/movies";
 import { getClient } from "../db";
 import { ObjectId } from "mongodb";
+import Joi from "joi";
 
 export const moviesRouter = express.Router();
 
-const movies: Movie[] = 
-[{ id: 1, title : 'Mario Bros', year : 2023},
- { id: 2, title : 'Goonies', year: 1985}                         
-];
+const schema = Joi.object({
+    title: Joi.string().min(1).max(100).required(),
+    year: Joi.number().integer().min(1888).max(2025).required()    
+});
 
 moviesRouter.get('/movies', async(req, res) => {
     try {
@@ -24,6 +25,12 @@ moviesRouter.get('/movies', async(req, res) => {
 });
 
 moviesRouter.post('/movies', async(req, res) => {
+
+    const valid = schema.validate(req.body);
+
+    if (valid.error) {
+        return res.status(400).send(valid.error);
+    }
 
     try {
         const movie = req.body as Movie;
@@ -57,6 +64,13 @@ moviesRouter.delete('/movies/:id', async (req, res) => {
 })
 
 moviesRouter.put('/movies/:id', async(req, res) => {
+
+    const valid = schema.validate(req.body);
+
+    if (valid.error) {
+        return res.status(400).send(valid.error);
+    }
+
     try {
         const _id = new ObjectId(req.params.id);
         const data = req.body as Movie;

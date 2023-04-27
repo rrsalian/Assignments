@@ -1,1 +1,1 @@
-{ "execMap" : { "ts" : "./node_modules/ .bin/ts-node" } }
+{ "execMap" : { "ts": "./node_modules/.bin/ts-node"  } }
