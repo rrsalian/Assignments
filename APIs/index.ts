@@ -1,12 +1,14 @@
 import express from 'express';
 import cors from "cors";
-import { productRouter } from './src/routes/productRouter';
+import { productsRouter } from './src/routes/productsRouter';
+import { usersRouter } from './src/routes/usersRouter';
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/", productRouter);
+app.use("/", productsRouter);
+app.use("/", usersRouter);
 
 const port = 3000;
 
